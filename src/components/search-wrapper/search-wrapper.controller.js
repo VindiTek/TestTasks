@@ -4,9 +4,9 @@ class SearchWrapperController {
   }
   $onInit () {
     this.routesList = [];
-    this.AirportsService.getAllAirports().success(data => {
-      this.airportList = data.airports;
-      this.routesFullList = data.routes;
+    this.AirportsService.getAllAirports().then(data => {
+      this.airportList = data.data.airports;
+      this.routesFullList = data.data.routes;
       this.setOriginAirport();
       this.setDestAirport();
     });

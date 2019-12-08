@@ -10,8 +10,8 @@ class SearchResultsController {
     this.hideTable = true;
     this.hideMessage = false;
 
-    this.CheapFlightsService.getAllTrips(this.$stateParams).success(results => {
-      this.results = results.flights;
+    this.CheapFlightsService.getAllTrips(this.$stateParams).then(results => {
+      this.results = results.data.flights;
       if (this.results && this.results.length) {
         this.hideTable = false;
         this.hideMessage = false;
@@ -19,18 +19,18 @@ class SearchResultsController {
         this.hideTable = true;
         this.hideMessage = true;
       }
-    }).error(() => {
+    }).catch(() => {
       console.log("It's some error of retrieving data. Please try later.");
     });
 
     this.searchInfo = this.$stateParams;
 
     this.AirportsService.getAllAirports()
-      .success(results => {
+      .then(results => {
         this.airports = results.airports;
         this.from = this.airports.find(airport => airport.iataCode === this.searchInfo.origin).name;
         this.to = this.airports.find(airport => airport.iataCode === this.searchInfo.dest).name;
-      }).error(() => {
+      }).catch(() => {
         console.log("It's some error of retrieving data. Please try later.");
       });
     this.dateFrom = this.searchInfo.originDate;

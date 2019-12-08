@@ -80,7 +80,7 @@
   "dependencies": {
     "angular": "1.6.4",
     "angular-sanitize": "1.6.4",
-    "angular-ui-router": "https://registry.npmjs.org/angular-ui-router/-/angular-ui-router-0.2.18.tgz",
+    "angular-ui-router": "0.3.2",
     "bulma": "^0.4.0",
     "moment": "^2.15.1"
   },
