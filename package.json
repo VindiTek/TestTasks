@@ -78,7 +78,7 @@
     "webpack-vendor-chunk-plugin": "^1.0.0"
   },
   "dependencies": {
-    "angular": "1.6.4",
+    "angular": "1.8.0",
     "angular-sanitize": "1.6.4",
     "angular-ui-router": "0.3.2",
     "bulma": "^0.4.0",
